@@ -99,6 +99,9 @@ PASSWORD elastic = XiAqjTzAZ8rXOKzc1bI5
   
 ## [Packetbeat] 
 ### Configure Authentication credential between Packetbeat and Elasticsearch (Secondary Server)<br>
+(Packetbeat write to elasticsearch)<br>
+<img src="images/packet_write_to_elastic.JPG">
+
 NB : No Kibana installed on Secondary server, we have configure just by API command line<br>
 #### Create role <br>
 index name = clstr_packetbeat_secondary_server_* <br>
@@ -129,5 +132,11 @@ role name = packetbeat_writer
    ```sh
   	service packetbeat restart
   ```
+### Configure Authentication credential between Elasticsearch(Primary server) and Elasticsearch(Secondary Server)<br>
+(Packetbeat write to elasticsearch)<br>
+<img src="images/elastic_primary_read_from_elastic_secondary.JPG">
+ 
+  
+  
 #### NB : This repository contain the important parameters in config files : 
 https://github.com/secfit/elk/tree/main/config
