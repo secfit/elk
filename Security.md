@@ -24,5 +24,19 @@ Scenario
    - Secondary Server <br>
        Ip adress      : 192.168.1.101<br>
 
-The picture discribe 
-   <img src="images/packetbeat.JPG">
+   <img src="images/packetbeat1.JPG">
+   
+## [Elasticsearch]
+#### Create Certificate Directory (Primary Server & Secondary Server)
+   ```sh
+  	mkdir /etc/elasticsearch/config/
+  ```
+#### Generate TLS Certificate (Primary Server)
+   ```sh
+  	/usr/share/elasticsearch/bin/elasticsearch-certutil cert
+    out : /etc/elasticsearch/config/elastic-certificates.p12
+    pass  : ""
+    or
+    /usr/share/elasticsearch/elasticsearch-certutil cert -out config/elastic-certificates.p12 -pass ""
+  ```
+  <img src="images/elastic-sertificate.png">
