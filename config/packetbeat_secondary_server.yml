@@ -1,0 +1,8 @@
+output.elasticsearch:
+  hosts: ["192.168.1.101:9200"]
+  username: "user_packetbeat_internal_secondary_server"
+  password: "DHdk50dsSDFgiSDf"
+xpack.monitoring.enabled: true
+output.elasticsearch.index: "clstr_packetbeat_apps1-system_-%{[agent.version]}-%{+yyyy.MM.dd}"
+setup.template.name: "packetbeat_secondary_server_cluster_"
+setup.template.pattern: "packetbeat_secondary_server_cluster_*"
