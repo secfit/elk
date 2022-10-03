@@ -3,7 +3,7 @@ path.logs: /var/log/elasticsearch
 bootstrap.system_call_filter: false
 network.host: 192.168.1.101
 http.port: 9200
-cluster.name: opm_elastic_cluster_apps1
+cluster.name: elastic_cluster_secondary_server
 node.name: secondary_server
 cluster.initial_master_nodes: ["192.168.1.101"]
 xpack.security.enabled: true
