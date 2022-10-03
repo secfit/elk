@@ -57,5 +57,8 @@ Check the latest release of (OpenJDK 11)[https://jdk.java.net/11/] before runnin
   ```
    <img src="images/java_version.JPG">
   
-  
+  ### Installation
+   ```sh
+    yum install elasticsearch
+  ```
   
