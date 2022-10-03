@@ -99,7 +99,7 @@ PASSWORD elastic = XiAqjTzAZ8rXOKzc1bI5
   
 ## [Packetbeat] 
 ### Configure Authentication credential between Packetbeat and Elasticsearch (Secondary Server)<br>
-(Packetbeat write to elasticsearch)<br>
+> (Packetbeat write to elasticsearch)<br>
 <img src="images/packet_write_to_elastic.JPG">
 
 NB : No Kibana installed on Secondary server, we have configure just by API command line<br>
@@ -133,10 +133,21 @@ role name = packetbeat_writer
   	service packetbeat restart
   ```
 ### Configure Authentication credential between Elasticsearch(Primary server) and Elasticsearch(Secondary Server)<br>
-(Packetbeat write to elasticsearch)<br>
+> (Packetbeat write to elasticsearch)<br>
 <img src="images/elastic_primary_read_from_elastic_secondary.JPG">
- 
+
+#### Add packetbeat_monitor_secondary_server role to read remote_cluster_secondary_server:clst_* & kibana read privileges (Primary Server)
+   ```sh
+  	curl -XPOST -u elastic:XiAqjTzAZ8rXOKzc1bI5 -H 'Content-Type: application/json' "http://192.168.1.100:9200/_xpack/security/role/packetbeat_monitor_secondary_server?pretty" -d'{ "indices": [ { "names": [ "remote_cluster_secondary_server:clstr_*" ], "privileges": ["read","view_index_metadata"] } ] ,"applications" : [ { "application" : "kibana-.kibana", "privileges" : [ "feature_dashboard.read", "feature_visualize.read", "feature_discover.read" ], "resources" : [ "space:default" ] } ] }'
+  ```
+  You can also add kibana privileges for user interface following this section : Stack Management >> Security >> Roles 
+  <img src="images/kibana_privileges.jpg">
+
+#### Add packetbeat_monitor_secondary_server role to read remote_cluster_secondary_server:clst_* (Secondary server)
+ ```sh
+curl -XPOST -u elastic:XiAqjTzAZ8rXOKzc1bI5 -H 'Content-Type: application/json' "http://192.168.1.100:9200/_xpack/security/role/packetbeat_monitor_secondary_server?pretty" -d'{ "indices": [ { "names": [ "remote_cluster_secondary_server*" ], "privileges": ["read","view_index_metadata"] } ] }'
+  ```
   
-  
+
 #### NB : This repository contain the important parameters in config files : 
 https://github.com/secfit/elk/tree/main/config
