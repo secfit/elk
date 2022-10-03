@@ -1,0 +1,8 @@
+server.port: 5601
+server.host: "127.0.0.1"
+server.maxPayload: 10485760
+elasticsearch.hosts: ["http://192.168.1.100:9200"]
+elasticsearch.username: "elastic"
+elasticsearch.password: "XiAqjTzAZ8rXOKzc1bI5"
+elasticsearch.pingTimeout: 30000
+newsfeed.enabled: false
