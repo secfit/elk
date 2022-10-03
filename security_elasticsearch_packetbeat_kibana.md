@@ -129,3 +129,5 @@ role name = packetbeat_writer
    ```sh
   	service packetbeat restart
   ```
+#### NB : This repository contain the important parameters in config files : 
+https://github.com/secfit/elk/tree/main/config
