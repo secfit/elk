@@ -1,0 +1,13 @@
+path.data: /var/lib/elasticsearch
+path.logs: /var/log/elasticsearch
+bootstrap.system_call_filter: false
+network.host: 192.168.1.101
+http.port: 9200
+cluster.name: opm_elastic_cluster_apps1
+node.name: secondary_server
+cluster.initial_master_nodes: ["192.168.1.101"]
+xpack.security.enabled: true
+xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.verification_mode: certificate
+xpack.security.transport.ssl.keystore.path: config/elastic-certificates.p12
+xpack.security.transport.ssl.truststore.path: config/elastic-certificates.p12
