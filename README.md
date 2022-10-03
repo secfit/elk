@@ -130,3 +130,7 @@ Check packetbeat Indice
     server.host: "127.0.0.1"
     elasticsearch.hosts: ["http://localhost:9266"]
   ```
+  service initialisation
+   ```sh
+    service kibana start
+  ```
