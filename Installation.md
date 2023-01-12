@@ -124,7 +124,7 @@ Check packetbeat Indice
     yum install kibana
   ```
   
- Change host/port & output values on /etc/packetbeat/kibana.yml
+ Change host/port & output values on /etc/kibana/kibana.yml
    ```sh
     server.port: 5694
     server.host: "127.0.0.1"
